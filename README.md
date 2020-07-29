@@ -1,4 +1,4 @@
-# jQuery maskMoney [![Build Status](https://travis-ci.org/naaando/jquery-maskmoney.png)](https://travis-ci.org/naaando/jquery-maskmoney)
+# jQuery maskMoney [![Build Status](https://travis-ci.org/naaando/jquery-maskmoney.svg?branch=master)](https://travis-ci.org/naaando/jquery-maskmoney)
 
 Just a simple way to create masks to your currency form fields with [jQuery](http://jquery.com/).
 
@@ -45,7 +45,7 @@ The options that you can set are:
  * `allowZero`: use this setting to prevent users from inputing zero. default: false
  * `allowNegative`: use this setting to prevent users from inputing negative values. default: false
  * `formatOnBlur`: delay formatting of text field until focus leaves the field. default: false
- * `reverse`: by default, `maskMoney` applies keystrokes from right to left. use this setting to apply keystrokes from left to right. 
+ * `reverse`: by default, `maskMoney` applies keystrokes from right to left. use this setting to apply keystrokes from left to right.
  * `selectAllOnFocus`: select all text in the input when the element fires the focus event. default :false
  * `allowEmpty`: allow empty input values, so that when you delete the number it doesn't reset to 0.00.  default: false
 
