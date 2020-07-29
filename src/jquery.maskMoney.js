@@ -22,7 +22,7 @@
                 allowEmpty: false,
                 bringCaretAtEndOnFocus: true
             },
-		methods = {
+        methods = {
         destroy: function () {
             $(this).unbind(".maskMoney");
 
@@ -70,18 +70,18 @@
             });
         },
 
-		unmaskedWithOptions: function () {
+        unmaskedWithOptions: function () {
             return this.map(function () {
                 var value = ($(this).val() || "0"),
-					settings = $(this).data("settings") || defaultOptions,
-					regExp = new RegExp((settings.thousandsForUnmasked || settings.thousands), "g");
+                    settings = $(this).data("settings") || defaultOptions,
+                    regExp = new RegExp((settings.thousandsForUnmasked || settings.thousands), "g");
                 value = value.replace(regExp, "");
                 return parseFloat(value);
             });
         },
 
         init: function (parameters) {
-			// the default options should not be shared with others
+            // the default options should not be shared with others
             parameters = $.extend($.extend({}, defaultOptions), parameters);
 
             return this.each(function () {
@@ -203,18 +203,18 @@
                         return;
                     }
                     var isNumber = !isNaN(value);
-					var decimalPointIndex = isNumber? value.indexOf("."): value.indexOf(settings.decimal);
+                    var decimalPointIndex = isNumber? value.indexOf("."): value.indexOf(settings.decimal);
                     if (settings.precision > 0) {
-						if(decimalPointIndex < 0){
-							value += settings.decimal + new Array(settings.precision + 1).join(0);
-						}
-						else {
-							// If the following decimal part dosen't have enough length against the precision, it needs to be filled with zeros.
-							var integerPart = value.slice(0, decimalPointIndex),
-								decimalPart = value.slice(decimalPointIndex + 1);
-							value = integerPart + settings.decimal + decimalPart +
-									new Array((settings.precision + 1) - decimalPart.length).join(0);
-						}
+                        if(decimalPointIndex < 0){
+                            value += settings.decimal + new Array(settings.precision + 1).join(0);
+                        }
+                        else {
+                            // If the following decimal part dosen't have enough length against the precision, it needs to be filled with zeros.
+                            var integerPart = value.slice(0, decimalPointIndex),
+                                decimalPart = value.slice(decimalPointIndex + 1);
+                            value = integerPart + settings.decimal + decimalPart +
+                                    new Array((settings.precision + 1) - decimalPart.length).join(0);
+                        }
                     } else if (decimalPointIndex > 0) {
                         // if the precision is 0, discard the decimal part
                         value = value.slice(0, decimalPointIndex);
